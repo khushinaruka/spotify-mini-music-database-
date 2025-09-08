@@ -9,8 +9,7 @@ CREATE TABLE Albums (
     album_id INT PRIMARY KEY,
     album_name VARCHAR(100) NOT NULL,
     release_year INT,
-    artist_id INT,
-    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id)
+    artist_id INT
 );
 
 CREATE TABLE Songs (
@@ -20,9 +19,7 @@ CREATE TABLE Songs (
     genre VARCHAR(50),
     play_count INT DEFAULT 0,
     artist_id INT,
-    album_id INT,
-    FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
-    FOREIGN KEY (album_id) REFERENCES Albums(album_id)
+    album_id INT
 );
 
 CREATE TABLE Playlists (
